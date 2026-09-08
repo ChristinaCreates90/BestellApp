@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestellApp</title>
+
+    <link rel="icon" type="image/png" href="./assets/img/Favicon.png">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/shopping-cart.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./dialog.css">
+</head>
+
+<body onload="renderMenu()">
+
+    <header>
+        <div class="header-content">
+            <div class="logo-img">
+                <img src="./assets/img/Logo 02.png" alt="Logo Bild">
+            </div>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-img"></div>
+
+            <div class="hero-content">
+                <div class="Burger-logo">
+                    <img src="./assets/img/Ellipse 16.png" alt="Restaurant Logo">
+                </div>
+
+                <div class="top-div">
+                    <h1>Burger<span class="house">House</span></h1>
+
+                    <div class="review-div">
+                        ★ <b>4,1</b> (317)
+                    </div>
+                </div>
+
+                <span class="hero-text">
+                    The best of Burgers, Pizza, and Greens, all in one great place.
+                </span>
+            </div>
+        </section>
+        <div class="bestellapp-wrapper">
+            <div class="menu-wrapper">
+
+                <!-- BURGER -->
+                <div class="menu-banner">
+                    <div class="banner-content">
+                        <img src="./assets/img/Chanese 1.png" alt="Bild von Hamburger">
+                        <h2>Burger & Sandwiches</h2>
+                    </div>
+                </div>
+                <section>
+                    <div class="center" id="burgermenu"></div>
+                </section>
+
+                <!-- PIZZA -->
+                <div class="menu-banner">
+                    <div class="banner-content">
+                        <img src="./assets/img/Pizza 1.png" alt="Bild von Pizza">
+                        <h2>Pizza (30cm)</h2>
+                    </div>
+                </div>
+                <section>
+                    <div class="center" id="pizzamenu"></div>
+                </section>
+
+                <!-- SALAD -->
+                <div class="menu-banner">
+                    <div class="banner-content">
+                        <img src="./assets/img/Salad 1.png" alt="Bild von Salat">
+                        <h2>Salad</h2>
+                    </div>
+                </div>
+                <section>
+                    <div class="center" id="saladmenu"></div>
+                </section>
+            </div>
+
+            <div class="shopping-cart-wrapper" id="shopping-cart-wrapper">
+                <div class="basket">
+                    <h4>Your Basket</h4>
+                    <div class="basketDishes" id="basketDishes"></div>
+                    <div class="basket-cost">
+                        <div class="total-cost">
+                            <p>Subtotal</p>
+                            <span id="meal-costs">€</span>
+                        </div>
+                        <div class="total-cost">
+                            <p>Delivery fee</p>
+                            <span>4,99 €</span>
+                        </div>
+                        <hr style="width:100%;text-align:left;margin-left:0">
+                        <div class="total-cost">
+                            <p>Total</p>
+                            <span id="total-costs">€</span>
+                        </div>
+                        <button class="buy-btn" id="buy-btn" onclick="openDialog()">
+                            Buy now (<span id="buy-total-costs"></span>)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+
+            <div>
+                <span>&copy; 2025 BurgerHouse</span>
+            </div>
+
+            <span>Imprint</span>
+            <span>Cookie Preferences</span>
+
+        </div>
+    </footer>
+
+    <div id="body-overlay" class="body-overlay">
+        <div class="dialog" id="dialog">
+            <div class="close-btn" onclick="closeDialog()">
+                <button>X</button>
+            </div>
+            <div class="confirmed-content">
+                <img src="./assets/img/ChatGPT Image Nov 24, 2025, 11_51_33 AM 1.png" alt="Lieferwagen">
+                <h2>Order confirmed!</h2>
+                <h3>Your food is on the way!</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-bottom-bar">
+        <button>
+            <img src="./assets/img/Home.png" alt="Startseite">
+        </button>
+        <button>
+            <img src="./assets/img/person.png" alt="Profil Button">
+        </button>
+        <button>
+            <img src="./assets/img/takeout_dining_2.png" alt="">
+        </button>
+        <div class="mobile-cart">
+            <button id="mobile-basket" onclick="openMobileBasket()">
+                <img src="./assets/img/shopping_cart.png" alt="">
+            </button>
+            <span class="dish-count-bar" id="dish-count-bar"></span>
+        </div>
+    </div>
+
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/script.js" defer></script>
+</body>
+
+</html>

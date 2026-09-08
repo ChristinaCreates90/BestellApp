@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: 'Palanquin', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: rgb(231, 108, 31);
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    height: auto;
+    font-size: 40px;
+    margin-left: 15px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(253, 234, 220);
+}
+
+p {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.dish-btn {
+    background-color: white;
+    border-radius: 40px;
+    gap: 16px;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dish-btn:hover {
+    color: white;
+    background-color: rgb(231, 108, 31);
+}
+
+.added-dish-btn {
+    display: none;
+}
+
+
+@media (min-width: 768px) and (max-width: 1280px) {
+
+  h2 {
+        font-size: 35px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 30px;
+    }
+
+}
