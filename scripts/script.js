@@ -127,7 +127,7 @@ function updateBasketCosts() {
 
     let total = 0;
 
-     if (subtotal > 0) {
+    if (subtotal > 0) {
         total = subtotal + 4.99;
     }
 
@@ -142,9 +142,20 @@ loadBasketFromLocalStorage();
 
 
 function openDialog() {
+
+    if (warenkorb.length === 0) {
+        return;
+    }
+    
     const overlay = document.getElementById("body-overlay");
     overlay.classList.add("visible");
     document.body.classList.add("no-scroll");
+
+    warenkorb = [];
+
+    saveBasketToLocalStorage();
+    renderBasket();
+    updateBasketCosts();
 }
 
 
@@ -160,7 +171,7 @@ function openMobileBasket() {
     document.body.classList.toggle("no-scroll");
 }
 
-document.getElementById("body-overlay").addEventListener("click", function(event) {
+document.getElementById("body-overlay").addEventListener("click", function (event) {
     if (event.target === this) {
         closeDialog();
     }
