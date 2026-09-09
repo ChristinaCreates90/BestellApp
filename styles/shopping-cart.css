@@ -77,13 +77,34 @@
     margin-top: 4px;
 }
 
-.dish-added-bakset {
+.dish-added-basket {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     font-size: 22px;
     margin-bottom: 10px;
     gap: 8px;
+}
+
+.dish-added-basket button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: rgb(54, 54, 52);
+    font-size: 18px;
+}
+
+.dish-added-basket img {
+    height: 18px;
+    margin-top: 4px;
+}
+
+.meal-title-basket {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .verticalLine {

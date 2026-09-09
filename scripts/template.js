@@ -28,27 +28,40 @@ function dishTemplate(dish) {
 
 
 function basketTemplate(dish) {
-   return `
+    return `
         <div class="basket-content">
             <div>
-                <div class="dish-added-bakset">
-                    <span> 1x </span>
-                    <span> ${dish.name}</span>
+                <div class="dish-added-basket">
+                    <div class="meal-title-basket">
+                        <span> 1x </span>
+                        <span> ${dish.name}</span>
+                    </div>
+                        ${dish.menge > 2 ? `
+                            <button onclick="deleteFromBasket(${dish.id})">
+                                <img src="./assets/img/delete.png" alt="Löschen">
+                            </button>
+                        ` : ""}
                 </div>
                     
                 <div class="dish-adjust">
                     <div class="meal-adjust">
-                        <button onclick="deleteFromBasket(${dish.id})"><img src="./assets/img/delete.png" alt="Löschen"></button>
-                        ${dish.menge > 1 ? `
-                            <button 
-                                onclick="removeFromBasket(${dish.id})">
-                                -
-                            </button>
-                        ` : ""}
+                         ${dish.menge <= 1 ? `
+
+                        <button onclick="deleteFromBasket(${dish.id})">
+                            <img src="./assets/img/delete.png" alt="Löschen">
+                        </button>
+
+                    ` : `
+
+                        <button onclick="removeFromBasket(${dish.id})">
+                            -
+                        </button>
+
+                    `}
                         <button>${(dish.menge)}</button>
                         <button onclick="addToBasket(event, ${dish.id})"> + </button>
                     </div>
-                        <span class="dish-count">${(dish.price*dish.menge).toFixed(2)} €</span>
+                        <span class="dish-count">${(dish.price * dish.menge).toFixed(2)} €</span>
                 </div>
         </div>
     `;
