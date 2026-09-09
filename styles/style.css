@@ -99,7 +99,6 @@ header {
 
 .menu-wrapper {
     width: 100%;
-    min-width: 0;
 }
 
 .menu-banner {
@@ -110,7 +109,6 @@ header {
     margin-left: calc((1440px - 100vw) / 2);
     height: 60px;
     background-color: rgb(231, 108, 31);
-    margin-bottom: 30px;
     padding-left: 15px;
     color: white;
     margin-top: 60px;

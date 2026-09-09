@@ -20,7 +20,7 @@ let dishes = [
         category: "Burger",
         name: "Beef red burger",
         price: 9.90,
-        image: "../assets/img/BaconBurger.png",
+        image: "../assets/img/RedBurger.png",
         description: "Beef, Cheese, Tomatoes, Lettuce, Onion",
     },
     {
@@ -28,7 +28,7 @@ let dishes = [
         category: "Pizza",
         name: "Pizza Margherita",
         price: 11.90,
-        image: "../assets/img/Pizza Magherita.png",
+        image: "../assets/img/PizzaMagherita.png",
         description: "Tomato Sauce, Mozzarella"
 
     },
@@ -37,7 +37,7 @@ let dishes = [
         category: "Pizza",
         name: "Pizza Chorizo",
         price: 13.90,
-        image: "../assets/img/Pizza Chorizo.png",
+        image: "../assets/img/PizzaChorizo.png",
         description: "Tomato slices, Mozzarella, Chorizo"
 
     },
@@ -46,7 +46,7 @@ let dishes = [
         category: "Pizza",
         name: "Pizza Funghi",
         price: 12.90,
-        image: "../assets/img/Pizza Funghi.png",
+        image: "../assets/img/PizzaFunghi.png",
         description: "Red onion, Olives, Button Mushrooms, Mozzarella"
 
     },
@@ -55,7 +55,7 @@ let dishes = [
         category: "Salad",
         name: "Warm beef arugula salad",
         price: 16.90,
-        image: "../assets/img/Warm beef salad.png",
+        image: "../assets/img/Warm-beef-salad.png",
         description: "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressing"
 
     },
@@ -64,7 +64,7 @@ let dishes = [
         category: "Salad",
         name: "Mini green Salad",
         price: 7.90,
-        image: "../assets/img/Mini green salad.png",
+        image: "../assets/img/Mini-green-salad.png",
         description: "Green salad, Cucumber, Carrots, Parsley, Radishes"
 
     },
@@ -73,7 +73,7 @@ let dishes = [
         category: "Salad",
         name: "Green Salad with sea food",
         price: 16.90,
-        image: "../assets/img/Green salad sea food.png",
+        image: "../assets/img/Green-salad-sea-food.png",
         description: "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressing"
 
     },

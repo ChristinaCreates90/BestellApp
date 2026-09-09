@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     height: 650px;
     background-color: rgb(54, 54, 52);
     border-radius: 12px 0px 0px 12px;
@@ -61,12 +62,19 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 3px;
 }
 
-.dish-amount {
-    display: flex;
-    width: 20%;
-    padding-right: 8px;
+.meal-adjust button {
+    background-color: transparent;
+    border: none;
+    color: rgb(54, 54, 52);
+    font-size: 18px;
+}
+
+.meal-adjust img {
+    height: 18px;
+    margin-top: 4px;
 }
 
 .dish-added-bakset {
@@ -75,23 +83,7 @@
     align-items: center;
     font-size: 22px;
     margin-bottom: 10px;
-}
-
-.dish-title {
-    font-size: 20px;
-    line-height: 30px;
-}
-
-.change-dishes {
-    background-color: transparent;
-    border: none;
-    color: rgb(54, 54, 52);
-    font-size: 18px;
-}
-
-.change-dishes img {
-    height: 18px;
-    margin-top: 4px;
+    gap: 8px;
 }
 
 .verticalLine {

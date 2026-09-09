@@ -32,22 +32,21 @@ function basketTemplate(dish) {
         <div class="basket-content">
             <div>
                 <div class="dish-added-bakset">
-                    <span class="dish-amount"> 1x </span>
-                    <span class="dish-title"> ${dish.name}</span>
+                    <span> 1x </span>
+                    <span> ${dish.name}</span>
                 </div>
                     
                 <div class="dish-adjust">
                     <div class="meal-adjust">
-                        <button class="change-dishes" onclick="deleteFromBasket(${dish.id})"><img src="./assets/img/delete.png" alt="Löschen"></button>
+                        <button onclick="deleteFromBasket(${dish.id})"><img src="./assets/img/delete.png" alt="Löschen"></button>
                         ${dish.menge > 1 ? `
                             <button 
-                                class="change-dishes" 
                                 onclick="removeFromBasket(${dish.id})">
                                 -
                             </button>
                         ` : ""}
-                        <button class="change-dishes">${(dish.menge)}</button>
-                        <button class="change-dishes" onclick="addToBasket(event, ${dish.id})"> + </button>
+                        <button>${(dish.menge)}</button>
+                        <button onclick="addToBasket(event, ${dish.id})"> + </button>
                     </div>
                         <span class="dish-count">${(dish.price*dish.menge).toFixed(2)} €</span>
                 </div>
