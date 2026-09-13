@@ -2,8 +2,10 @@ function dishTemplate(dish) {
     return `
         <div class="dishes-content">
 
-            <img class="dish-img" src="${dish.image}" alt="${dish.name}">
-    
+            <div class="dish-img"
+                style="background-image: url('${dish.image}')">
+            </div>
+
             <div class="dish-text">
                 <h3>${dish.name}</h3>
 
