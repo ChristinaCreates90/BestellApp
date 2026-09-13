@@ -53,9 +53,12 @@ function loadBasketFromLocalStorage() {
     if (savedBasket) {
         cart = JSON.parse(savedBasket);
     }
-
     renderBasket();
     updateBasketCosts();
+
+    cart.forEach(item => {
+        updateDishButton(item.id, item.menge);
+    });
 }
 
 
@@ -66,8 +69,16 @@ function updateBasket() {
 }
 
 
-function addToBasket(event, dishid) {
+function updateDishButton(dishid, menge) {
+    const button = document.getElementById(`dish-btn-${dishid}`);
 
+    if (button) {
+        button.innerText = `Added ${menge}`;
+    }
+}
+
+
+function addToBasket(event, dishid) {
     dishes.forEach(dish => {
         if (dish.id === dishid) {
             cartprice += dish.price;
@@ -84,8 +95,7 @@ function addToBasket(event, dishid) {
                 cart.push(item);
             }
 
-            event.target.innerText = `Added ${item.menge}`;
-
+            updateDishButton(dishid, item.menge);
             updateBasket();
         }
     });
@@ -93,20 +103,24 @@ function addToBasket(event, dishid) {
 
 
 function removeFromBasket(dishid) {
-
     let item = cart.find(element => element.id === dishid);
 
     if (item.menge > 1) {
         item.menge -= 1;
     }
 
+    updateDishButton(dishid, item.menge);
     updateBasket();
 }
 
 
 function deleteFromBasket(dishid) {
-
     cart = cart.filter(item => item.id !== dishid);
+    const button = document.getElementById(`dish-btn-${dishid}`);
+
+    if (button) {
+        button.innerText = "Add to basket";
+    }
 
     updateBasket();
 }
@@ -199,3 +213,7 @@ document.addEventListener("keydown", function (event) {
         closeDialog();
     }
 });
+
+
+renderMenu();
+loadBasketFromLocalStorage();

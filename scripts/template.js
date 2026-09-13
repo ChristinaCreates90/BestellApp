@@ -17,7 +17,7 @@ function dishTemplate(dish) {
                 
             <div class="basket-add">
                 <span class="price">${dish.price.toFixed(2)} €</span>
-                <button class="dish-btn" onclick="addToBasket(event, ${dish.id})">
+                <button class="dish-btn" id="dish-btn-${dish.id}" onclick="addToBasket(event, ${dish.id})">
                     Add to basket
                 </button>
             </div>
