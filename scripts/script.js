@@ -41,9 +41,11 @@ function renderBasket() {
     });
 }
 
+
 function saveBasketToLocalStorage() {
     localStorage.setItem("warenkorb", JSON.stringify(warenkorb));
 }
+
 
 function loadBasketFromLocalStorage() {
     const savedBasket = localStorage.getItem("warenkorb");
@@ -56,8 +58,15 @@ function loadBasketFromLocalStorage() {
     updateBasketCosts();
 }
 
+
+function updateBasket() {
+    renderBasket();
+    updateBasketCosts();
+    saveBasketToLocalStorage();
+}
+
+
 function addToBasket(event, dishid) {
-    dishid = Number(dishid);
 
     dishes.forEach(dish => {
         if (dish.id === dishid) {
@@ -77,19 +86,13 @@ function addToBasket(event, dishid) {
 
             event.target.innerText = `Added ${item.menge}`;
 
-            basketdishes.innerHTML = "";
-
-            renderBasket();
-            updateBasketCosts();
-            saveBasketToLocalStorage();
+            updateBasket();
         }
     });
-
 };
 
 
 function removeFromBasket(dishid) {
-    dishid = Number(dishid);
 
     let item = warenkorb.find(element => element.id === dishid);
 
@@ -97,20 +100,15 @@ function removeFromBasket(dishid) {
         item.menge -= 1;
     }
 
-    renderBasket();
-    updateBasketCosts();
-    saveBasketToLocalStorage();
+    updateBasket();
 }
 
 
 function deleteFromBasket(dishid) {
-    dishid = Number(dishid);
 
     warenkorb = warenkorb.filter(item => item.id !== dishid);
 
-    renderBasket();
-    updateBasketCosts();
-    saveBasketToLocalStorage();
+    updateBasket();
 }
 
 
@@ -133,34 +131,43 @@ function updateBasketCosts() {
 
     totalCosts.innerText = `${total.toFixed(2)} €`;
     buyTotalCosts.innerText = `${total.toFixed(2)} €`;
-
     dishCountBar.innerText = dishCount;
 }
 
-renderMenu();
-loadBasketFromLocalStorage();
+function clearBasket() {
+    warenkorb = [];
+    updateBasket();
+}
+
+
+function resetDishButtons() {
+    document.querySelectorAll(".dish-btn").forEach(button => {
+        button.innerText = "Add to basket";
+    });
+}
 
 
 function openDialog() {
-
     if (warenkorb.length === 0) {
         return;
     }
-    
+
     const overlay = document.getElementById("body-overlay");
+
     overlay.classList.add("visible");
     document.body.classList.add("no-scroll");
 
-    warenkorb = [];
+    clearBasket();
+    resetDishButtons();
+    closeMobileBasket();
 
-    saveBasketToLocalStorage();
-    renderBasket();
-    updateBasketCosts();
+    setTimeout(closeDialog, 3000);
 }
 
 
 function closeDialog() {
     const overlay = document.getElementById("body-overlay");
+
     overlay.classList.remove("visible");
     document.body.classList.remove("no-scroll");
 }
@@ -168,8 +175,17 @@ function closeDialog() {
 
 function openMobileBasket() {
     mobileBasket.classList.toggle("visible-basket");
-    document.body.classList.toggle("no-scroll");
+
+    const isOpen = mobileBasket.classList.contains("visible-basket");
+
+    document.body.classList.toggle("no-scroll", isOpen);
 }
+
+
+function closeMobileBasket() {
+    mobileBasket.classList.remove("visible-basket");
+}
+
 
 document.getElementById("body-overlay").addEventListener("click", function (event) {
     if (event.target === this) {

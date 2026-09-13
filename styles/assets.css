@@ -33,6 +33,7 @@ h2 {
 h3 {
     font-size: 24px;
     font-weight: 700;
+    line-height: 24px;
 }
 
 h4 {
@@ -45,17 +46,18 @@ p {
     font-family: 'Palanquin', sans-serif;
     font-weight: 600;
     font-size: 16px;
+    line-height: 24px;
 }
 
 
 .dish-btn {
     background-color: white;
     border-radius: 40px;
-    gap: 16px;
-    padding: 6px 12px;
+    padding: 5px 8px;
     border: none;
     cursor: pointer;
     text-decoration: none;
+    font-size: 12px;
 }
 
 .dish-btn:hover {
@@ -70,8 +72,16 @@ p {
 
 @media (min-width: 768px) and (max-width: 1280px) {
 
-  h2 {
-        font-size: 35px;
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .price {
+        font-size: 22px;
     }
 
 }

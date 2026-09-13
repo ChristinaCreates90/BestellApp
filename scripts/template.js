@@ -7,7 +7,7 @@ function dishTemplate(dish) {
             </div>
 
             <div class="dish-text">
-                <h3 class="dish-title">${dish.name}</h3>
+                <h3>${dish.name}</h3>
 
                 <p>
                     ${dish.description}
@@ -53,7 +53,7 @@ function basketTemplate(dish) {
 
                     ` : `
 
-                        <button onclick="removeFromBasket(${dish.id})">
+                        <button class="minus-icon" onclick="removeFromBasket(${dish.id})">
                             -
                         </button>
 
