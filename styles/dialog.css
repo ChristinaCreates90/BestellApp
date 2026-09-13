@@ -1,0 +1,55 @@
+.dialog {
+    background-color: rgb(54, 54, 52);
+    padding: 40px;
+    border-radius: 12px;
+    color: rgb(253, 234, 220);
+}
+
+.confirmed-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.confirmed-content  img {
+    width: 80px;
+}
+
+#body-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#body-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.close-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn button {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(253, 234, 220);
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
