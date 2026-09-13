@@ -149,9 +149,7 @@ header {
 .dish-img {
     width: 180px;
     height: 120px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    object-fit: cover;
     border-radius: 8px;
 }
 
