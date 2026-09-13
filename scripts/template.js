@@ -36,7 +36,7 @@ function basketTemplate(dish) {
                         <span> 1x </span>
                         <span> ${dish.name}</span>
                     </div>
-                        ${dish.menge > 2 ? `
+                        ${dish.menge > 1 ? `
                             <button onclick="deleteFromBasket(${dish.id})">
                                 <img src="./assets/img/delete.png" alt="Löschen">
                             </button>

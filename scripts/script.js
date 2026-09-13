@@ -1,5 +1,5 @@
-let warenkorbprice = 0;
-let warenkorb = []
+let cartprice = 0;
+let cart = []
 
 const burgermenu = document.getElementById("burgermenu");
 const pizzamenu = document.getElementById("pizzamenu");
@@ -36,22 +36,22 @@ function renderMenu() {
 function renderBasket() {
     basketdishes.innerHTML = "";
 
-    warenkorb.forEach(dish => {
+    cart.forEach(dish => {
         basketdishes.innerHTML += basketTemplate(dish);
     });
 }
 
 
 function saveBasketToLocalStorage() {
-    localStorage.setItem("warenkorb", JSON.stringify(warenkorb));
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 
 function loadBasketFromLocalStorage() {
-    const savedBasket = localStorage.getItem("warenkorb");
+    const savedBasket = localStorage.getItem("cart");
 
     if (savedBasket) {
-        warenkorb = JSON.parse(savedBasket);
+        cart = JSON.parse(savedBasket);
     }
 
     renderBasket();
@@ -70,9 +70,9 @@ function addToBasket(event, dishid) {
 
     dishes.forEach(dish => {
         if (dish.id === dishid) {
-            warenkorbprice += dish.price;
+            cartprice += dish.price;
 
-            let item = warenkorb.find((element) => element.id === dishid)
+            let item = cart.find((element) => element.id === dishid)
 
             if (item) {
 
@@ -81,7 +81,7 @@ function addToBasket(event, dishid) {
                 }
             } else {
                 item = { id: dish.id, name: dish.name, menge: 1, price: dish.price };
-                warenkorb.push(item);
+                cart.push(item);
             }
 
             event.target.innerText = `Added ${item.menge}`;
@@ -94,7 +94,7 @@ function addToBasket(event, dishid) {
 
 function removeFromBasket(dishid) {
 
-    let item = warenkorb.find(element => element.id === dishid);
+    let item = cart.find(element => element.id === dishid);
 
     if (item.menge > 1) {
         item.menge -= 1;
@@ -106,7 +106,7 @@ function removeFromBasket(dishid) {
 
 function deleteFromBasket(dishid) {
 
-    warenkorb = warenkorb.filter(item => item.id !== dishid);
+    cart = cart.filter(item => item.id !== dishid);
 
     updateBasket();
 }
@@ -116,7 +116,7 @@ function updateBasketCosts() {
     let subtotal = 0;
     let dishCount = 0;
 
-    warenkorb.forEach(dish => {
+    cart.forEach(dish => {
         subtotal += dish.price * dish.menge;
         dishCount += dish.menge;
     });
@@ -135,7 +135,7 @@ function updateBasketCosts() {
 }
 
 function clearBasket() {
-    warenkorb = [];
+    cart = [];
     updateBasket();
 }
 
@@ -148,7 +148,7 @@ function resetDishButtons() {
 
 
 function openDialog() {
-    if (warenkorb.length === 0) {
+    if (cart.length === 0) {
         return;
     }
 

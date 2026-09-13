@@ -124,6 +124,7 @@ header {
 
 .banner-content img {
     height: 80px;
+    width: auto;
 }
 
 .center {
@@ -182,14 +183,13 @@ header {
 }
 
 .mobile-bottom-bar {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     height: 70px;
     background-color: rgb(54, 54, 52);
     color: white;
     padding: 0px 20px;
-    display: none;
 }
 
 .mobile-bottom-bar button {
@@ -311,25 +311,12 @@ footer {
         padding-left: 0;
     }
 
-    .banner-content img {
-        height: 80px;
-        width: 80px;
-    }
-
-    .menu-wrapper {
-        width: 100%;
-    }
-
     .shopping-cart-wrapper {
         display: none;
     }
 
     .bestellapp-wrapper {
         grid-template-columns: 1fr;
-    }
-
-    .menu-wrapper {
-        width: 100%;
     }
 
     .dishes-content {
@@ -344,7 +331,7 @@ footer {
 
     .dish-text {
         width: 100%;
-        padding: 0Px;
+        padding: 0;
     }
 
     .basket-add {
@@ -356,6 +343,11 @@ footer {
 
     .price {
         font-size: 20px;
+    }
+
+    footer {
+        margin-bottom: 70px;
+        margin-top: 0;
     }
 
     .footer-content {

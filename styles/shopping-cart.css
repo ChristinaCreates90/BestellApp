@@ -145,7 +145,7 @@
 
 @media (max-width: 767px) {
 
-    .shopping-cart-wrapper {
+   .shopping-cart-wrapper {
         margin-top: 0;
     }
 
@@ -170,10 +170,8 @@
         position: fixed;
         bottom: 70px;
         top: auto;
-    }
 
-    .dish-added-bakset {
-        justify-content: space-between;
+        animation: slideInBasket 0.35s ease;
     }
 
     .basketDishes {
@@ -182,5 +180,17 @@
 
     body.no-scroll {
         overflow: hidden;
+    }
+}
+
+@keyframes slideInBasket {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
