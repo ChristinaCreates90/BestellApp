@@ -143,6 +143,10 @@
     cursor: pointer;
 }
 
+.basket-overlay {
+    display: none;
+}
+
 @media (max-width: 767px) {
 
    .shopping-cart-wrapper {
