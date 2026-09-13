@@ -181,6 +181,22 @@
     body.no-scroll {
         overflow: hidden;
     }
+
+    .basket-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+
+    .basket-overlay.visible {
+        display: block;
+    }
+
+    .visible-basket {
+        z-index: 999;
+    }
 }
 
 @keyframes slideInBasket {

@@ -191,13 +191,16 @@ function openMobileBasket() {
     mobileBasket.classList.toggle("visible-basket");
 
     const isOpen = mobileBasket.classList.contains("visible-basket");
+    const basketOverlay = document.getElementById("basket-overlay");
 
+    basketOverlay.classList.toggle("visible", isOpen);
     document.body.classList.toggle("no-scroll", isOpen);
 }
 
 
 function closeMobileBasket() {
     mobileBasket.classList.remove("visible-basket");
+    document.getElementById("basket-overlay").classList.remove("visible");
 }
 
 
