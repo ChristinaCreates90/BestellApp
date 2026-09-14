@@ -57,7 +57,7 @@ function loadBasketFromLocalStorage() {
     updateBasketCosts();
 
     cart.forEach(item => {
-        updateDishButton(item.id, item.menge);
+        updateDishButton(item.id, item.amount);
     });
 }
 
@@ -69,11 +69,11 @@ function updateBasket() {
 }
 
 
-function updateDishButton(dishid, menge) {
+function updateDishButton(dishid, amount) {
     const button = document.getElementById(`dish-btn-${dishid}`);
 
     if (button) {
-        button.innerText = `Added ${menge}`;
+        button.innerText = `Added ${amount}`;
     }
 }
 
@@ -87,15 +87,15 @@ function addToBasket(event, dishid) {
 
             if (item) {
 
-                if (item.menge < 50) {
-                    item.menge += 1;
+                if (item.amount < 50) {
+                    item.amount += 1;
                 }
             } else {
-                item = { id: dish.id, name: dish.name, menge: 1, price: dish.price };
+                item = { id: dish.id, name: dish.name, amount: 1, price: dish.price };
                 cart.push(item);
             }
 
-            updateDishButton(dishid, item.menge);
+            updateDishButton(dishid, item.amount);
             updateBasket();
         }
     });
@@ -105,11 +105,11 @@ function addToBasket(event, dishid) {
 function removeFromBasket(dishid) {
     let item = cart.find(element => element.id === dishid);
 
-    if (item.menge > 1) {
-        item.menge -= 1;
+    if (item.amount > 1) {
+        item.amount -= 1;
     }
 
-    updateDishButton(dishid, item.menge);
+    updateDishButton(dishid, item.amount);
     updateBasket();
 }
 
@@ -131,8 +131,8 @@ function updateBasketCosts() {
     let dishCount = 0;
 
     cart.forEach(dish => {
-        subtotal += dish.price * dish.menge;
-        dishCount += dish.menge;
+        subtotal += dish.price * dish.amount;
+        dishCount += dish.amount;
     });
 
     mealCosts.innerText = `${subtotal.toFixed(2)} €`;

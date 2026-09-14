@@ -36,7 +36,7 @@ function basketTemplate(dish) {
                         <span> 1x </span>
                         <span> ${dish.name}</span>
                     </div>
-                        ${dish.menge > 1 ? `
+                        ${dish.amount > 1 ? `
                             <button onclick="deleteFromBasket(${dish.id})">
                                 <img src="./assets/img/delete.png" alt="Löschen">
                             </button>
@@ -45,7 +45,7 @@ function basketTemplate(dish) {
                     
                 <div class="dish-adjust">
                     <div class="meal-adjust">
-                         ${dish.menge <= 1 ? `
+                         ${dish.amount <= 1 ? `
 
                         <button onclick="deleteFromBasket(${dish.id})">
                             <img src="./assets/img/delete.png" alt="Löschen">
@@ -58,10 +58,10 @@ function basketTemplate(dish) {
                         </button>
 
                     `}
-                        <button>${(dish.menge)}</button>
+                        <button>${(dish.amount)}</button>
                         <button onclick="addToBasket(event, ${dish.id})"> + </button>
                     </div>
-                        <span class="dish-count">${(dish.price * dish.menge).toFixed(2)} €</span>
+                        <span class="dish-count">${(dish.price * dish.amount).toFixed(2)} €</span>
                 </div>
         </div>
     `;

@@ -9,12 +9,6 @@ body {
     font-family: 'Palanquin', sans-serif;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 h1 {
     font-family: 'Palanquin', sans-serif;
     font-weight: 700;
