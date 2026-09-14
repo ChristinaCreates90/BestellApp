@@ -262,11 +262,11 @@ footer {
     }
 
     .basket-add {
-        height: 100px;
+        height: stretch;
     }
 
     .dish-text {
-        height: 100px;
+        height: stretch;
     }
 }
 
@@ -348,6 +348,7 @@ footer {
         flex-direction: column;
         width: 90%;
         gap: 20px;
+        height: auto;
     }
 
     .dish-img {
@@ -365,15 +366,17 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
     }
 
     .basket-add {
         height: auto;
     }
-    
+
     .price {
         font-size: 20px;
+        padding-bottom: 0;
     }
 
     footer {
