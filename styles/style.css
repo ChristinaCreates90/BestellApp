@@ -150,7 +150,7 @@ header {
     width: 100%;
     background-color: rgb(253, 234, 220);
     border-radius: 8px;
-    padding: 10px;
+    padding: 16px;
     margin-bottom: 30px;
 }
 
@@ -168,14 +168,18 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     width: 50%;
-    padding: 12px 8px;
-    gap: 15px;
+    height: 120px;
+}
+
+.dish-text h3 {
+    padding-bottom: 16px;
 }
 
 .price {
     font-size: 24px;
     font-weight: 700;
     line-height: 24px;
+    padding-bottom: 16px;
 }
 
 .basket-add {
@@ -183,9 +187,8 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    width: 110px;
-    padding: 12px 0px;
-    gap: 15px;
+    width: 120px;
+    height: 120px;
 }
 
 .mobile-bottom-bar {
@@ -253,14 +256,23 @@ footer {
 
 @media (min-width: 768px) and (max-width: 1440px) {
     .dish-img {
-        width: 150px;
-        height: auto;
+        width: 130px;
+        height: 100px;
+        margin-right: 8px;
+    }
+
+    .basket-add {
+        height: 100px;
+    }
+
+    .dish-text {
+        height: 100px;
     }
 }
 
 @media (max-width: 767px) {
 
-   main {
+    main {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
     }
@@ -318,7 +330,7 @@ footer {
         display: none;
     }
 
-     .menu-wrapper {
+    .menu-wrapper {
         width: 100%;
         grid-column: 1;
     }
@@ -340,11 +352,13 @@ footer {
 
     .dish-img {
         width: 100%;
+        height: 150px;
     }
 
     .dish-text {
         width: 100%;
         padding: 0;
+        height: auto;
     }
 
     .basket-add {
@@ -354,6 +368,10 @@ footer {
         width: 100%;
     }
 
+    .basket-add {
+        height: auto;
+    }
+    
     .price {
         font-size: 20px;
     }
